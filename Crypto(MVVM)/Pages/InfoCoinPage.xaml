@@ -1,0 +1,70 @@
+﻿<Page x:Class="Crypto_MVVM_.Pages.InfoCoinPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                   xmlns:language="clr-namespace:Crypto_MVVM_.Properties.Langs"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Crypto_MVVM_.Pages" xmlns:viewmodels="clr-namespace:Crypto_MVVM_.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:InfoCoinPageViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InfoCoinPage">
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Grid>
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical">
+                    <Label HorizontalAlignment="Left" Grid.Column="0" Margin="10,0,0,0" Grid.Row="0"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="18" x:Name="coinName" Content="{Binding coinName}" Width="auto"></Label>
+                    <Label HorizontalAlignment="Left" Grid.Column="0" Margin="10,0,0,0" Grid.Row="1"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="18"  x:Name="coinRank" Content="{Binding coinRank}" Width="auto"></Label>
+                    <Label HorizontalAlignment="Left" Grid.Column="0" Margin="10,0,0,0" Grid.Row="2"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="18" x:Name="coinSymbool"  Content="{Binding coinSymbol}" Width="auto"></Label>
+                    <Label HorizontalAlignment="Left" Grid.Column="0" Margin="10,0,0,0" Grid.Row="3"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="18" x:Name="coinOffers"  Content="{Binding coinOffers}" Width="auto"></Label>
+
+                    <Label HorizontalAlignment="Left" Grid.Column="0" Grid.Row="4" Margin="10,0,0,0"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="18" x:Name="coinVolume" Content="{Binding coinVolume}" Width="auto"></Label>
+                    <Label HorizontalAlignment="Left" Grid.Column="0" Grid.Row="5" Margin="10,0,0,0"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="18"  x:Name="coinPrice" Content="{Binding coinPrice}" Width="auto"></Label>
+                    <Label HorizontalAlignment="Left" Grid.Column="0" Grid.Row="6" Margin="10,0,0,0"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="18" x:Name="coinChange"  Content="{Binding coinChange}" Width="auto"></Label>
+                    <Label HorizontalAlignment="Left" Grid.Column="0" Grid.Row="7" Margin="10,0,0,0"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="18" x:Name="coinMedium"  Content="{Binding coinMedium}" Width="auto"></Label>
+
+                </StackPanel>
+
+                <Border VerticalAlignment="Bottom" Background="{DynamicResource PrimaryBackgroundColor}" Height="160" Margin="10" CornerRadius="15">
+                    <StackPanel Orientation="Vertical">
+                        <Label HorizontalAlignment="Center"  Margin="5,0,0,0"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="20" Content="{x:Static language:Lang.Top3}" Width="auto"></Label>
+                        <WrapPanel   Margin="10,2,0,0" Orientation="Horizontal">
+                            <Image Width="35" Height="35" Source="../Images/bitcoin.png"></Image>
+                            <Label HorizontalAlignment="Center"  Margin="5,0,0,0"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="14" Content="#1 Bitcoin" Width="auto"></Label>
+                        </WrapPanel>
+                        <WrapPanel  Margin="10,2,0,0" Orientation="Horizontal">
+                            <Image Width="35" Height="35" Source="../Images/ethereum.png"></Image>
+                            <Label HorizontalAlignment="Center"  Margin="5,0,0,0"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="14" Content="#2 Ethereum" Width="auto"></Label>
+                        </WrapPanel>
+                        <WrapPanel Margin="10,2,0,0" Orientation="Horizontal">
+                            <Image Width="35" Height="35" Source="../Images/tether.png"></Image>
+                            <Label HorizontalAlignment="Center"  Margin="5,0,0,0"  Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"  FontSize="14" Content="#3 Tether" Width="auto"></Label>
+                        </WrapPanel>
+                    </StackPanel>
+
+                </Border>
+
+                <DataGrid BorderBrush="Purple" Foreground="{DynamicResource PrimaryTextColor}" Grid.Column="1" x:Name="dataGridCoins" ItemsSource="{Binding listCoins}" CanUserAddRows="False" IsReadOnly="True" FontWeight="Bold" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"  AutoGenerateColumns="False"  CanUserReorderColumns="False" CanUserResizeColumns="False" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding priceUsd}"  Header="{x:Static language:Lang.pricein}" Width="*"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding date}"  Header="{x:Static language:Lang.time}" Width="*"></DataGridTextColumn>
+                        <!--<DataGridTemplateColumn  Header="Change per (24h)" Width="*"  IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding changePercent24Hr}" Foreground="{Binding changePercentColor}" VerticalAlignment="Center"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+    </Border>
+
+</Page>

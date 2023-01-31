@@ -1,0 +1,137 @@
+﻿<Window x:Class="Crypto_MVVM_.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:language="clr-namespace:Crypto_MVVM_.Properties.Langs"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crypto_MVVM_" xmlns:models="clr-namespace:Crypto_MVVM_.Models" xmlns:i="http://schemas.microsoft.com/xaml/behaviors" d:DataContext="{d:DesignInstance Type=models:MainWindowViewModel}"   
+        mc:Ignorable="d" Name="Home" Title="Crypto" Height="650" Width="1000"  WindowStartupLocation="CenterScreen" WindowState="{Binding WindowState}" WindowStyle="None" Background="Transparent" AllowsTransparency="True" ResizeMode="NoResize" FontFamily="Poppins">
+    <Border Background="{DynamicResource PrimaryBackgroundColor}"
+            CornerRadius="8">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Left menu-->
+            <Border Grid.Column="0"
+                    Background="{DynamicResource SecundaryBackgroundColor}"
+                    CornerRadius="8 0 0 8">
+
+                <Grid x:Name="GridNav" Width="150">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <!--Logo info-->
+                        <Border 
+                              Margin="14 0 0 0"
+                              Width="32" Height="24"
+                              HorizontalAlignment="Left">
+                            <Border.Background>
+                                <ImageBrush ImageSource="../Images/cryptoLogo.png" Stretch="Uniform"/>
+                            </Border.Background>
+                        </Border>
+
+                        <Label Content="Crypto" Foreground="{DynamicResource PrimaryTextColor}"  FontWeight="Bold" FontSize="16" VerticalAlignment="Center"  HorizontalAlignment="Left" Margin="60 0 0 0"/>
+                        <!--Logo info-->
+                    </Grid>
+                    <!--Left menu buttons-->
+                    <StackPanel Grid.Row="1" Margin="-1 40 0 20">
+                        <Border Margin="2" Style="{StaticResource styleBorderLeftMenu}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseLeftButtonUp">
+                                    <i:InvokeCommandAction Command="{Binding DashboardClick}">
+                                    </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <WrapPanel HorizontalAlignment="Left" Margin="2">
+                                <Button HorizontalAlignment="Left" Margin="17,0,0,0" Width="25" Height="25" x:Name="btnDashboard" Style="{DynamicResource PopupButtonStyle}"  >
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="../Images/dashboard.png"/>
+                                    </Button.Background>
+                                </Button>
+                                <Label Foreground="{DynamicResource PrimaryTextColor}" Style="{StaticResource styleLabelLeftMenu}" Content="{x:Static language:Lang.dashboard}"/>
+                            </WrapPanel>
+                        </Border>
+                        <Border Margin="2" Style="{StaticResource styleBorderLeftMenu}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseLeftButtonUp">
+                                    <i:InvokeCommandAction Command="{Binding ExchangeClick}">
+                                    </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <WrapPanel>
+                                <Button HorizontalAlignment="Left" Margin="17,0,0,0"  Width="25" Height="25" x:Name="btnExchange" Style="{DynamicResource PopupButtonStyle}" >
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="../Images/exchange.png"/>
+                                    </Button.Background>
+                                </Button>
+                                <Label Foreground="{DynamicResource PrimaryTextColor}" Style="{StaticResource styleLabelLeftMenu}" Content="{x:Static language:Lang.exchange}"/>
+                            </WrapPanel>
+                        </Border>
+                        <Border Style="{StaticResource styleBorderLeftMenu}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseLeftButtonUp">
+                                    <i:InvokeCommandAction Command="{Binding SettingsClick}">
+                                    </i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <WrapPanel>
+                                <Button HorizontalAlignment="Left" Margin="17,0,0,0" Width="25" Height="25"  x:Name="btnSetting" Style="{DynamicResource PopupButtonStyle}"  >
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="../Images/settings.png"/>
+                                    </Button.Background>
+                                </Button>
+                                <Label Foreground="{DynamicResource PrimaryTextColor}"  Style="{StaticResource styleLabelLeftMenu}" Content="{x:Static language:Lang.settings}"/>
+                            </WrapPanel>
+                        </Border>
+
+
+                        <!--Bottom info-->
+                        <WrapPanel Margin="0,325,0,10" VerticalAlignment="Bottom"/>
+                        <!--Bottom info-->                 
+                    </StackPanel>
+                    <!--Left menu buttons-->                
+                </Grid>
+            </Border>
+            <!--Left menu-->
+            
+            <!--General grid-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--Current page-->
+                <Label HorizontalAlignment="Left" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold" Grid.Row="0" FontSize="30" Margin="20,10,0,0" x:Name="pageName"  Content="{Binding CurrentPageLabel}" Width="164"></Label>
+                <!--Current page-->
+                
+                <!--Window buttons-->
+                <StackPanel Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft" Grid.RowSpan="2">
+                    <Button x:Name="btnClose" Command="{Binding btnClose}" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}">
+                    </Button>
+                    <Button x:Name="btnRestore" Command="{Binding btnRestore}" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource restore}"  Margin="5,0"  Cursor="Hand">
+                    </Button>
+                    <Button x:Name="btnMinimize"  Command="{Binding btnMinimize}" Style="{DynamicResource IconButtonsStyle}"  Content="{DynamicResource minimize}"   Cursor="Hand"/>
+                </StackPanel>
+                <!--Window buttons-->
+
+                <!--Frame-->
+                <Frame Grid.Row="1"
+                       Name="fContainer"
+                       Opacity="{Binding FrameOpacity}"
+                       Margin="20"
+                       NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}"></Frame>
+                <!--Frame-->
+
+            </Grid>
+            <!--General grid-->
+            
+        </Grid>
+    </Border>
+</Window>
