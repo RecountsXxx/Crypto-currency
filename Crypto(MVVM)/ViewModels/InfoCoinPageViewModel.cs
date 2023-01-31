@@ -24,6 +24,7 @@ namespace Crypto_MVVM_.ViewModels
         public string coinPrice { get; set; }
         public string coinChange { get; set; }
         public string coinMedium { get; set; }
+
     public InfoCoinPageViewModel(Coin coin)
         {
             this.coin = coin;
@@ -57,6 +58,7 @@ namespace Crypto_MVVM_.ViewModels
                 coinMedium = "Medium price for day: " + coin.vwap24Hr.Substring(0, coin.vwap24Hr.IndexOf(".") + 6) + " $";
 
             }
+
             HttpClient Client = new HttpClient();
             string URL = "https://api.coincap.io/v2/";
             string response = Client.GetStringAsync(URL + "assets/" + coin.id + "/history?interval=d1").Result;

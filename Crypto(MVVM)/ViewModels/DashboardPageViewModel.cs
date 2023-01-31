@@ -91,8 +91,6 @@ namespace Crypto_MVVM_.ViewModels
             getDataFromAPI();
             foreach (var item in coins)
             {
-                item.colorRankCoin = Brushes.White;
-                item.textColorRankCoin = Brushes.LightGray;
                 if (item.changePercent24Hr.Contains("-"))
                 {
                     item.changePercentColor = Brushes.OrangeRed;

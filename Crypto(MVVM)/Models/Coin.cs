@@ -21,8 +21,6 @@ namespace Crypto_MVVM_.Models
         public string changePercent24Hr { get; set; }
         public string vwap24Hr { get; set; }
         public Brush colorCoin { get; set; }
-        public Brush colorRankCoin { get; set; }
-        public Brush textColorRankCoin { get; set; }
         public Brush changePercentColor { get; set; }
     }
 }

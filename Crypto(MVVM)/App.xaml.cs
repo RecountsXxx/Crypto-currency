@@ -53,27 +53,30 @@ namespace Crypto_MVVM_
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(langCode);
 
             string themeTempIndex;
-
-            using (StreamReader reader = new StreamReader("ThemeSettings.txt"))
+            if (File.Exists("ThemeSettings.txt"))
             {
-                themeTempIndex = reader.ReadLine();
+                using (StreamReader reader = new StreamReader("ThemeSettings.txt"))
+                {
+                    themeTempIndex = reader.ReadLine();
+                }
+                if (themeTempIndex == "System.Windows.Controls.ComboBoxItem: Dark theme")
+                {
+                    var uri = new Uri("Themes/DarkTheme.xaml", UriKind.Relative);
+                    Application.Current.Resources.MergedDictionaries[0].Source = uri;
+                    ResourceDictionary resurce = Application.LoadComponent(uri) as ResourceDictionary;
+                    Application.Current.Resources.Clear();
+                    Application.Current.Resources.MergedDictionaries.Add(resurce);
+                }
+                if (themeTempIndex == "System.Windows.Controls.ComboBoxItem: White theme")
+                {
+                    var uri = new Uri("Themes/WhiteTheme.xaml", UriKind.Relative);
+                    Application.Current.Resources.MergedDictionaries[0].Source = uri;
+                    ResourceDictionary resurce = Application.LoadComponent(uri) as ResourceDictionary;
+                    Application.Current.Resources.Clear();
+                    Application.Current.Resources.MergedDictionaries.Add(resurce);
+                }
             }
-            if (themeTempIndex == "System.Windows.Controls.ComboBoxItem: Dark theme")
-            {
-                var uri = new Uri("Themes/DarkTheme.xaml", UriKind.Relative);
-                Application.Current.Resources.MergedDictionaries[0].Source = uri;
-                ResourceDictionary resurce = Application.LoadComponent(uri) as ResourceDictionary;
-                Application.Current.Resources.Clear();
-                Application.Current.Resources.MergedDictionaries.Add(resurce);
-            }
-            if (themeTempIndex == "System.Windows.Controls.ComboBoxItem: White theme")
-            {
-                var uri = new Uri("Themes/WhiteTheme.xaml", UriKind.Relative);
-                Application.Current.Resources.MergedDictionaries[0].Source = uri;
-                ResourceDictionary resurce = Application.LoadComponent(uri) as ResourceDictionary;
-                Application.Current.Resources.Clear();
-                Application.Current.Resources.MergedDictionaries.Add(resurce);
-            }
+        
 
             base.OnStartup(e);
         }

@@ -122,7 +122,6 @@ namespace Crypto_MVVM_.Models
                 if (langCode == "en-US")
                     CurrentPageLabel = "Exchange";
             }
-            //CurrentPage = page;
             await Task.Factory.StartNew(() =>
             {
 
@@ -168,8 +167,6 @@ namespace Crypto_MVVM_.Models
             getDataFromAPI();
             foreach (var item in coins)
             {
-                item.colorRankCoin = Brushes.White;
-                item.textColorRankCoin = Brushes.LightGray;
                 if (item.changePercent24Hr.Contains("-"))
                 {
                     item.changePercentColor = Brushes.OrangeRed;
