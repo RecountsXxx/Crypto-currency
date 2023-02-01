@@ -43,7 +43,7 @@ namespace Crypto_MVVM_
         public bool CanExecute(object parameter) => _canExecute == null || _canExecute(parameter);
         public void Execute(object parameter) => _execute(parameter);
     }
-
+    
     public partial class App : Application
     {
         protected override void OnStartup(StartupEventArgs e)

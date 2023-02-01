@@ -21,11 +21,22 @@ namespace Crypto_MVVM_
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow window;
+
         public MainWindow()
         {
-       System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.languageCode);
+             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(Properties.Settings.Default.languageCode);
             InitializeComponent();
             DataContext = new MainWindowViewModel();
+            window = this;
+        }
+
+        private void Drag(object sender, MouseButtonEventArgs e)
+        {
+                  if (Mouse.LeftButton == MouseButtonState.Pressed)
+            {
+                MainWindow.window.DragMove();
+            }
         }
     }
 }

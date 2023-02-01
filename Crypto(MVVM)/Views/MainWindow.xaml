@@ -5,7 +5,7 @@
                   xmlns:language="clr-namespace:Crypto_MVVM_.Properties.Langs"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Crypto_MVVM_" xmlns:models="clr-namespace:Crypto_MVVM_.Models" xmlns:i="http://schemas.microsoft.com/xaml/behaviors" d:DataContext="{d:DesignInstance Type=models:MainWindowViewModel}"   
-        mc:Ignorable="d" Name="Home" Title="Crypto" Height="650" Width="1000"  WindowStartupLocation="CenterScreen" WindowState="{Binding WindowState}" WindowStyle="None" Background="Transparent" AllowsTransparency="True" ResizeMode="NoResize" FontFamily="Poppins">
+        mc:Ignorable="d" MouseDown="Drag" Name="Home" Title="Crypto" Height="650" Width="1000"  WindowStartupLocation="CenterScreen" WindowState="{Binding WindowState}" WindowStyle="None" Background="Transparent" AllowsTransparency="True" ResizeMode="NoResize" FontFamily="Poppins">
     <Border Background="{DynamicResource PrimaryBackgroundColor}"
             CornerRadius="8">
         <Grid>

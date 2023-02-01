@@ -65,6 +65,7 @@ namespace Crypto_MVVM_.Models
         public ICommand ExchangeClick { get; set; }
         #endregion
 
+
         public MainWindowViewModel()
         {
             refreshDataFromAPI();
@@ -177,6 +178,5 @@ namespace Crypto_MVVM_.Models
                 }
             }
         }
-
     }
 }
