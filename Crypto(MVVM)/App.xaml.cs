@@ -59,7 +59,7 @@ namespace Crypto_MVVM_
                 {
                     themeTempIndex = reader.ReadLine();
                 }
-                if (themeTempIndex == "System.Windows.Controls.ComboBoxItem: Dark theme")
+                if (themeTempIndex == "System.Windows.Controls.ComboBoxItem: Dark theme" || themeTempIndex == "System.Windows.Controls.ComboBoxItem: Темна тема")
                 {
                     var uri = new Uri("Themes/DarkTheme.xaml", UriKind.Relative);
                     Application.Current.Resources.MergedDictionaries[0].Source = uri;
@@ -67,7 +67,7 @@ namespace Crypto_MVVM_
                     Application.Current.Resources.Clear();
                     Application.Current.Resources.MergedDictionaries.Add(resurce);
                 }
-                if (themeTempIndex == "System.Windows.Controls.ComboBoxItem: White theme")
+                if (themeTempIndex == "System.Windows.Controls.ComboBoxItem: White theme" || themeTempIndex == "System.Windows.Controls.ComboBoxItem: Світла тема")
                 {
                     var uri = new Uri("Themes/WhiteTheme.xaml", UriKind.Relative);
                     Application.Current.Resources.MergedDictionaries[0].Source = uri;
