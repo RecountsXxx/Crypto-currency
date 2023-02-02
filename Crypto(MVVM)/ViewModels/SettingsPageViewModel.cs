@@ -56,7 +56,7 @@ namespace Crypto_MVVM_.ViewModels
                 Application.Current.Resources.Clear();
                 Application.Current.Resources.MergedDictionaries.Add(resurce);
             }
-            using(StreamWriter writer = new StreamWriter("ThemeSettings.txt", false))
+            using(StreamWriter writer = new StreamWriter("../../Themes/ThemeSettings.txt", false))
             {
                 writer.WriteLine(str);
             }

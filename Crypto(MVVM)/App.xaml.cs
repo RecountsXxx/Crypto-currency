@@ -53,9 +53,9 @@ namespace Crypto_MVVM_
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(langCode);
 
             string themeTempIndex;
-            if (File.Exists("ThemeSettings.txt"))
+            if (File.Exists("../../Themes/ThemeSettings.txt"))
             {
-                using (StreamReader reader = new StreamReader("ThemeSettings.txt"))
+                using (StreamReader reader = new StreamReader("../../Themes/ThemeSettings.txt"))
                 {
                     themeTempIndex = reader.ReadLine();
                 }
