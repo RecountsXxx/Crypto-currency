@@ -43,7 +43,7 @@
                     <StackPanel Grid.Row="1" Margin="-1 40 0 20">
                         <Border Margin="2" Style="{StaticResource styleBorderLeftMenu}">
                             <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="MouseLeftButtonUp">
+                                <i:EventTrigger EventName="MouseLeftButtonDown">
                                     <i:InvokeCommandAction Command="{Binding DashboardClick}">
                                     </i:InvokeCommandAction>
                                 </i:EventTrigger>
@@ -59,7 +59,7 @@
                         </Border>
                         <Border Margin="2" Style="{StaticResource styleBorderLeftMenu}">
                             <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="MouseLeftButtonUp">
+                                <i:EventTrigger EventName="MouseLeftButtonDown">
                                     <i:InvokeCommandAction Command="{Binding ExchangeClick}">
                                     </i:InvokeCommandAction>
                                 </i:EventTrigger>
@@ -75,7 +75,7 @@
                         </Border>
                         <Border Style="{StaticResource styleBorderLeftMenu}">
                             <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="MouseLeftButtonUp">
+                                <i:EventTrigger EventName="MouseLeftButtonDown">
                                     <i:InvokeCommandAction Command="{Binding SettingsClick}">
                                     </i:InvokeCommandAction>
                                 </i:EventTrigger>
