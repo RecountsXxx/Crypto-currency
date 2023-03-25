@@ -1,1 +1,1 @@
-System.Windows.Controls.ComboBoxItem: White theme
+System.Windows.Controls.ComboBoxItem: Dark theme
