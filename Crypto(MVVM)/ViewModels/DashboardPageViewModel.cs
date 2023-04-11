@@ -25,6 +25,7 @@ namespace Crypto_MVVM_.ViewModels
 {
     class DashboardPageViewModel : ViewModelBase
     {
+
         public ObservableCollection<Coin> coinsList = new ObservableCollection<Coin>();
         private ObservableCollection<Coin> _coins;
         public ObservableCollection<Coin> coins
