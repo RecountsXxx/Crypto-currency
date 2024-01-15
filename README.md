@@ -1,13 +1,22 @@
-# Crypto-currency
-В данном приложение использованы такие библиотеки как Newtonsoft.Json.
-Есть 3 страницы приложения такие как Dashboard - все монеты, с их описание.
-Dashboard - Также по клику по монету происходит переход на больш детальную информацию про монету, с списком изменения курса монеты.
-Exchange - есть 2 ComboBox с выбором монеты, какую обменить колличеству, и на какую монету.
-Settings - Есть выбор темы такие как - темная тема и светлая тема, также есть выбор языка приложения такие как английский и украинский.
-Также присутсвует анимация перехода между страницами.
-В приложение использован паттерн MVVM.
-Каждых 30 секунд, происходит обновление, так монеты не стоят на месте, а могут и рости, и падать.
-Также присутсвует поиск по монете, по символу, по рангу, не учитываю регистр, поиск происходит сразу же после ввода символа, так как сделан в событии TextChanged.
-Использован API сайта биржи - CoinCap.
-Добавить новый язык, или новую тему, можно очень легко, не нужно ничего переписывать.
-Данное приложение создано на основе текстового задания
+This application uses libraries such as Newtonsoft.Json.
+There are 3 pages of the application such as Dashboard - all coins, with their 
+description.
+Dashboard - Also by clicking on a coin there is a transition to a more detailed information about the coin, with a list of changes in the coin rate. 
+detailed information about the coin, with a list of changes in the coin rate.
+Exchange - there are 2 ComboBoxes with a choice of coins, which to exchange kollichestvo,
+ and for which coin.
+Settings - There is a choice of theme such as - dark theme and light theme, also
+ there is a choice of application language such as English and Ukrainian.
+Also present animation of the transition between pages.
+The application uses the MVVM pattern.
+Every 30 seconds, there is an update, so coins do not stand still, and
+ can both rise and fall.
+There is also a search by coin, by symbol, by rank, not taking into account the 
+case, the search occurs immediately after entering a symbol, because it is made in the
+ TextChanged event.
+Used API of the exchange site - CoinCap.
+Add a new language, or a new theme, you can very easily, you do not need to rewrite anything 
+rewrite.
+This application is created on the basis of a text task
+
+Translated with DeepL.com (free version)
